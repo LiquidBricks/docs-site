@@ -16,7 +16,7 @@ Behavior
 
 Code entrypoints
 - Consumer: `consumer/diagnostics/index.js`
-- Router: shared token router `@liquid-bricks/shared-providers/subject/router`
+- Router: shared token router `@liquid-bricks/lib-nats-subject/router`
 - Handler: `consumer/diagnostics/handlers/diagnostics/index.js`
 
 Publishing logs
