@@ -4,7 +4,7 @@ title: Introduction
 sidebar_position: 1
 ---
 
-Backend Bricks is a minimal, modular toolkit for building backend services with simple, composable building blocks.
+Backend Host is a minimal, modular toolkit for building backend services with simple, composable building blocks.
 
 What it is
 - A Node.js service scaffold that exposes a GraphQL API and wires in background workers/consumers.
@@ -32,4 +32,3 @@ Next steps
 - Explore the code in `index.js` to see how the server, NATS context, and consumers are initialized.
 - Add your own subjects, streams, and handlers to `consumer/` and your schema/types/resolvers to `graphql/`.
 - Configure NATS and environment defaults in `.env` and the service configuration provider.
-

@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Backend Bricks',
+  title: 'Backend Host',
   tagline: 'Minimal developer docs',
   favicon: 'img/favicon.ico',
 
@@ -24,11 +24,11 @@ const config = {
   url: 'https://reggieroby.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/backend-bricks/',
+  baseUrl: '/backend-host/',
 
   // GitHub repo metadata
   organizationName: 'reggieroby',
-  projectName: 'backend-bricks',
+  projectName: 'backend-host',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -54,7 +54,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/reggieroby/backend-bricks/edit/main/docs/',
+          editUrl: 'https://github.com/LiquidBricks/backend-host/edit/main/docs/',
         },
         blog: {
           showReadingTime: true,
@@ -72,9 +72,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Backend Bricks',
+        title: 'Backend Host',
         logo: {
-          alt: 'Backend Bricks Logo',
+          alt: 'Backend Host Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -90,7 +90,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/reggieroby/backend-bricks',
+            href: 'https://github.com/LiquidBricks/backend-host',
             label: 'GitHub',
             position: 'right',
           },
@@ -110,12 +110,12 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/reggieroby/backend-bricks',
+                href: 'https://github.com/LiquidBricks/backend-host',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Backend Bricks`,
+        copyright: `Copyright © ${new Date().getFullYear()} Backend Host`,
       },
       prism: {
         theme: prismThemes.github,
