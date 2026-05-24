@@ -5,17 +5,16 @@ sidebar_position: 1
 ---
 
 Overview
-- Subscribes to Component Manager stream messages and routes commands/events for components and instances.
+- Consumes component-service stream messages and routes commands/events for components and instances.
 
 Configuration
-- Stream: `COMPONENT_MANAGER_STREAM`
+- Stream: `COMPONENT_SERVICE_STREAM`
 - Durable name: `componentServiceConsumer`
 - Ack policy: Explicit
 - Deliver policy: All
 - Filters:
-  - `component.command`
-  - `component.event`
-  - `componentInstance.command`
+  - `*.component-service.*.*.cmd.>`
+  - `*.component-service.*.*.evt.>`
 
 Code
 - Entry: `consumer/componentService/index.js`
@@ -27,7 +26,7 @@ Usage
 import { componentServiceConsumer } from 'consumer/componentService/index.js'
 
 await componentServiceConsumer({
-  streamName: 'COMPONENT_MANAGER_STREAM',
+  streamName: 'COMPONENT_SERVICE_STREAM',
   natsContext,
   g,                // graph context
   diagnostics,
