@@ -7,7 +7,7 @@ sidebar_position: 1
 The Component Manager orchestrates component registration and instance lifecycle.
 
 - Code: `consumer/componentService/`
-- Subjects: `component.command`, `component.event`, `componentInstance.command`, `componentInstance.event`
+- Subjects: component and component-instance commands/events under `*.component-service.*.*`, including compute results on `*.component-service.*.function_result.evt.component.compute_function.v1.*`
 
 Responsibilities
 - Register component specs: persists component, nodes, and dependency edges from `builder/component.js` descriptors.
@@ -18,7 +18,7 @@ Key handlers
 - `component.command: register` — stores the component graph and emits `component.event: registered`.
 - `componentInstance.command: create` — creates an instance vertex, initializes state edges for each node, emits `.cmd.create.componentInstance`.
 - `componentInstance.command: start` — acknowledges a start request (hook for scheduling/execution).
-- `componentInstance.event: result_computed` — marks a data state as provided.
+- `*.component-service.*.function_result.evt.component.compute_function.v1.*` — marks a data state as provided.
 
 Code entrypoints
 - Manager: `consumer/componentService/index.js`
@@ -44,8 +44,7 @@ conn.publish('componentInstance.command', JSON.stringify({
 
 Provide a computed result to a waiting state (either from the executor or manually):
 ```js
-conn.publish('componentInstance.event', JSON.stringify({
-  event: 'result_computed',
+conn.publish('prod.component-service._.function_result.evt.component.compute_function.v1._', JSON.stringify({
   data: { instanceId: 'inst-1', stateId: '<state-vertex-id>', payload: { /* any */ } }
 }));
 ```
